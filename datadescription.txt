@@ -1,0 +1,80 @@
+Sample of 5 rows:
+        Area  Perimeter  MajorAxisLength  MinorAxisLength  AspectRation  Eccentricity  ConvexArea  EquivDiameter    Extent  Solidity  roundness  Compactness  ShapeFactor1  ShapeFactor2  ShapeFactor3  ShapeFactor4     Class
+1594   43485    758.113       265.533142       208.898520      1.271111      0.617318       43876     235.301555  0.758265  0.991089   0.950783     0.886148      0.006106      0.002323      0.785258      0.998149     SEKER
+10304  25306    589.450       220.598744       146.187627      1.509011      0.748898       25639     179.500975  0.773695  0.987012   0.915249     0.813699      0.008717      0.002357      0.662106      0.999125  DERMASON
+7691   38970    749.433       276.179926       180.170049      1.532885      0.757905       39525     222.751308  0.788707  0.985958   0.871916     0.806544      0.007087      0.001850      0.650513      0.997162      SIRA
+8902   45266    809.048       303.288664       191.688216      1.582198      0.774942       46017     240.071784  0.712570  0.983680   0.869027     0.791562      0.006700      0.001623      0.626570      0.991358      SIRA
+1381   41536    742.954       260.905814       202.926665      1.285715      0.628540       41893     229.967993  0.739483  0.991478   0.945607     0.881421      0.006281      0.002339      0.776904      0.998877     SEKER
+
+Shape of the dataframe:
+(13611, 17)
+
+Unique values in 'Class' column:
+['SEKER' 'BARBUNYA' 'BOMBAY' 'CALI' 'HOROZ' 'SIRA' 'DERMASON']
+
+Descriptive statistics:
+                Area     Perimeter  MajorAxisLength  MinorAxisLength  AspectRation  Eccentricity     ConvexArea  EquivDiameter        Extent      Solidity     roundness   Compactness  ShapeFactor1  ShapeFactor2  ShapeFactor3  ShapeFactor4
+count   13611.000000  13611.000000     13611.000000     13611.000000  13611.000000  13611.000000   13611.000000   13611.000000  13611.000000  13611.000000  13611.000000  13611.000000  13611.000000  13611.000000  13611.000000  13611.000000
+mean    53048.284549    855.283459       320.141867       202.270714      1.583242      0.750895   53768.200206     253.064220      0.749733      0.987143      0.873282      0.799864      0.006564      0.001716      0.643590      0.995063
+std     29324.095717    214.289696        85.694186        44.970091      0.246678      0.092002   29774.915817      59.177120      0.049086      0.004660      0.059520      0.061713      0.001128      0.000596      0.098996      0.004366
+min     20420.000000    524.736000       183.601165       122.512653      1.024868      0.218951   20684.000000     161.243764      0.555315      0.919246      0.489618      0.640577      0.002778      0.000564      0.410339      0.947687
+25%     36328.000000    703.523500       253.303633       175.848170      1.432307      0.715928   36714.500000     215.068003      0.718634      0.985670      0.832096      0.762469      0.005900      0.001154      0.581359      0.993703
+50%     44652.000000    794.941000       296.883367       192.431733      1.551124      0.764441   45178.000000     238.438026      0.759859      0.988283      0.883157      0.801277      0.006645      0.001694      0.642044      0.996386
+75%     61332.000000    977.213000       376.495012       217.031741      1.707109      0.810466   62294.000000     279.446467      0.786851      0.990013      0.916869      0.834270      0.007271      0.002170      0.696006      0.997883
+max    254616.000000   1985.370000       738.860154       460.198497      2.430306      0.911423  263261.000000     569.374358      0.866195      0.994677      0.990685      0.987303      0.010451      0.003665      0.974767      0.999733
+
+Count of missing values in each column:
+Area               0
+Perimeter          0
+MajorAxisLength    0
+MinorAxisLength    0
+AspectRation       0
+Eccentricity       0
+ConvexArea         0
+EquivDiameter      0
+Extent             0
+Solidity           0
+roundness          0
+Compactness        0
+ShapeFactor1       0
+ShapeFactor2       0
+ShapeFactor3       0
+ShapeFactor4       0
+Class              0
+
+Dataframe info:
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 13611 entries, 0 to 13610
+Data columns (total 17 columns):
+ #   Column           Non-Null Count  Dtype  
+---  ------           --------------  -----  
+ 0   Area             13611 non-null  int64  
+ 1   Perimeter        13611 non-null  float64
+ 2   MajorAxisLength  13611 non-null  float64
+ 3   MinorAxisLength  13611 non-null  float64
+ 4   AspectRation     13611 non-null  float64
+ 5   Eccentricity     13611 non-null  float64
+ 6   ConvexArea       13611 non-null  int64  
+ 7   EquivDiameter    13611 non-null  float64
+ 8   Extent           13611 non-null  float64
+ 9   Solidity         13611 non-null  float64
+ 10  roundness        13611 non-null  float64
+ 11  Compactness      13611 non-null  float64
+ 12  ShapeFactor1     13611 non-null  float64
+ 13  ShapeFactor2     13611 non-null  float64
+ 14  ShapeFactor3     13611 non-null  float64
+ 15  ShapeFactor4     13611 non-null  float64
+ 16  Class            13611 non-null  object 
+dtypes: float64(14), int64(2), object(1)
+memory usage: 1.8+ MB
+
+
+Value counts of 'Class' column:
+Class
+DERMASON    3546
+SIRA        2636
+SEKER       2027
+HOROZ       1928
+CALI        1630
+BARBUNYA    1322
+BOMBAY       522
