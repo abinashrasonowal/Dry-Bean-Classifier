@@ -52,11 +52,12 @@ class LogisticRegressionMulticlass:
         return np.argmax(probas, axis=1)
     
 # Train and test functions
-def train_and_test1(X_train, y_train, X_test, y_test, learning_rate=0.1, num_iterations=1000):
+def train_and_test_by_Logistic_R(X_train, y_train, X_test, y_test, learning_rate=0.1, num_iterations=1000):
     model = LogisticRegressionMulticlass(learning_rate=learning_rate, num_iterations=num_iterations)
     model.fit(X_train, y_train)
     y_pred = model.predict(X_test)
     accuracy = np.mean(y_pred == y_test)
+    
     print("Accuracy :", accuracy)
     
     # Precision
@@ -75,4 +76,4 @@ def train_and_test1(X_train, y_train, X_test, y_test, learning_rate=0.1, num_ite
     conf_matrix = confusion_matrix(y_test, y_pred)
     print("Confusion Matrix:\n", conf_matrix)
 
-    train_and_test1(X_train_sc, y_train, X_test_sc, y_test)
+

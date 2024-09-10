@@ -1,6 +1,5 @@
 import pandas as pd
 import numpy as np
-
 from dataloader import df
 
 def train_test_split(X, y, test_size=0.2, random_state=None):
@@ -26,7 +25,6 @@ def train_test_split(X, y, test_size=0.2, random_state=None):
     
     return X_train, X_test, y_train, y_test
 
-import numpy as np
 
 class StandardScaler:
     def __init__(self):
