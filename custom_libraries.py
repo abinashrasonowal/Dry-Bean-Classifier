@@ -3,7 +3,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
 from utils import *
-from dataloader import df
 
 class LogisticRegressionMulticlass:
     def __init__(self, learning_rate=0.01, num_iterations=1000, verbose=False):
@@ -52,28 +51,7 @@ class LogisticRegressionMulticlass:
         return np.argmax(probas, axis=1)
     
 # Train and test functions
-def train_and_test_by_Logistic_R(X_train, y_train, X_test, y_test, learning_rate=0.1, num_iterations=1000):
+def Logistic_R(learning_rate=0.1, num_iterations=1000):
     model = LogisticRegressionMulticlass(learning_rate=learning_rate, num_iterations=num_iterations)
-    model.fit(X_train, y_train)
-    y_pred = model.predict(X_test)
-    accuracy = np.mean(y_pred == y_test)
-    
-    print("Accuracy :", accuracy)
-    
-    # Precision
-    precision = precision_score(y_test, y_pred, average='macro')
-    print("Precision:", precision)
-
-    # Recall
-    recall = recall_score(y_test, y_pred, average='macro')
-    print("Recall:", recall)
-
-    # F1 Score
-    f1 = f1_score(y_test, y_pred, average='macro')
-    print("F1 Score:", f1)
-
-    # Confusion Matrix
-    conf_matrix = confusion_matrix(y_test, y_pred)
-    print("Confusion Matrix:\n", conf_matrix)
-
+    return model
 

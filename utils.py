@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 from dataloader import df
+from sklearn.preprocessing import LabelEncoder
 
 def train_test_split(X, y, test_size=0.2, random_state=None):
     if random_state is not None:
@@ -50,3 +51,8 @@ class StandardScaler:
         self.fit(X)
         return self.transform(X)
 
+def get_clean_dataset(df = df):
+    le = LabelEncoder()
+    df = df[(df["Area"] < 100000) | (df["ConvexArea"] < 100000)]  # Filtering
+    df["Class"] = le.fit_transform(df["Class"])  # Label Encoding
+    return df
