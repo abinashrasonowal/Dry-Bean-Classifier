@@ -22,7 +22,7 @@ class LogisticRegressionMulticlass:
     
     def gradient_descent(self, X, y):
         m, n = X.shape
-        theta = np.zeros(n)
+        theta = np.random.rand(n)
         for i in range(self.num_iterations):
             h = self.sigmoid(np.dot(X, theta))
             gradient = np.dot(X.T, (h - y)) / m

@@ -28,6 +28,7 @@ LR_model.fit(X_train_sc, y_train)
 y_pred = LR_model.predict(X_test_sc)
 accuracy = np.mean(y_pred == y_test)
 
+print('---------our model---------')
 print("Mean Absolute Error :", mean_absolute_error(y_test, y_pred))
 print("Accuracy :", accuracy)
 
@@ -36,5 +37,6 @@ lr = LogisticRegression()
 lr.fit(X_train_sc, y_train)
 y_lr = lr.predict(X_test_sc)
 
+print('--------inbuild model-------')
 print("Mean Absolute Error :", mean_absolute_error(y_test, y_lr))
 print("Accuracy:", accuracy_score(y_test, y_lr))

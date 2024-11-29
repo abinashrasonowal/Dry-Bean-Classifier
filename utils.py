@@ -54,5 +54,6 @@ class StandardScaler:
 def get_clean_dataset(df = df):
     le = LabelEncoder()
     df = df[(df["Area"] < 100000) | (df["ConvexArea"] < 100000)]  # Filtering
+    df = df.copy()
     df["Class"] = le.fit_transform(df["Class"])  # Label Encoding
     return df
