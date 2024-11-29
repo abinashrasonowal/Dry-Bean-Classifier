@@ -15,6 +15,7 @@ X = df.iloc[:,:-1]
 y = df.iloc[:, -1]
 
 
+
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)
 sc = StandardScaler()
 X_train_sc = sc.fit_transform(X_train)
@@ -70,32 +71,26 @@ labels = km.labels_
 df_km = df[labels == 1]
 df_km.reset_index(inplace = True)
 
-# Correlation of Dry Bran with Class
-from sklearn.preprocessing import LabelEncoder
+from sklearn.preprocessing  import LabelEncoder
 le = LabelEncoder()
+df_km = df_km.copy()
 df_km["Class"] = le.fit_transform(df_km["Class"])
-
-# Split Train/Test
 X = df_km.iloc[:,:-1]
 y = df_km.iloc[:, -1]
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)
 
-# Feature Scaling
-from sklearn.preprocessing import StandardScaler
-sc = StandardScaler()
 X_train_sc = sc.fit_transform(X_train)
 X_test_sc = sc.transform(X_test)
 
-#-------------------- LogisticRegressor - Scaled-------------
-from sklearn.linear_model import LogisticRegression
+#-------------------- Logistic Regressor -------------
 lr = LogisticRegression()
 lr.fit(X_train_sc, y_train)
 y_lr = lr.predict(X_test_sc)
 
 # Model Score
+print("------------------LR ----------")
 print("Normal Score :", lr.score(X_test_sc, y_test))
 print("Mean Absolute Error :", mean_absolute_error(y_test, y_lr))
-# Confusion Matrix
 conf_matrix = confusion_matrix(y_test, y_lr)
 print("Confusion Matrix:\n", conf_matrix)
 
@@ -104,10 +99,8 @@ svm_classifier2 = SVC()
 svm_classifier2.fit(X_train_sc, y_train)
 y_svm = svm_classifier2.predict(X_test_sc)
 
-# Model Score
+print("---------------SVM----------------")
 print("SVM Classifier Score:", svm_classifier2.score(X_test_sc, y_test))
 print("Mean Absolute Error:", mean_absolute_error(y_test, y_svm))
-
-# Confusion Matrix
 conf_matrix = confusion_matrix(y_test, y_svm)
 print("Confusion Matrix:\n", conf_matrix)
