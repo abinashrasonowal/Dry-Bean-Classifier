@@ -44,7 +44,7 @@ print("Accuracy:", accuracy_score(y_test, y_lr))
 # -------------------SVM----------------
 from sklearn.svm import SVC
 # Create SVM Classifier - not scaled
-svm_classifier = SVC()
+svm_classifier = SVC(decision_function_shape='ovr')
 svm_classifier.fit(X_train, y_train)
 y_svm = svm_classifier.predict(X_test)
 
@@ -54,7 +54,7 @@ print("SVM Classifier Score:", svm_classifier.score(X_test, y_test))
 print("Mean Absolute Error:", mean_absolute_error(y_test, y_svm))
 
 # Create SVM Classifier scaled
-svm_classifier2 = SVC() 
+svm_classifier2 = SVC(decision_function_shape='ovr') 
 svm_classifier2.fit(X_train_sc, y_train)
 y_svm = svm_classifier2.predict(X_test_sc)
 
