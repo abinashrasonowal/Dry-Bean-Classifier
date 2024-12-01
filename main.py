@@ -44,8 +44,8 @@ X_test_sc = sc.transform(X_test)
 
 # ---------------------------------------------------------------
 SMV_model = SVM_custom()
-SMV_model.fit(X_train, y_train)
-y_svm = SMV_model.predict(X_test)
+SMV_model.fit(X_train_sc, y_train)
+y_svm = SMV_model.predict(X_test_sc)
 
 # Model Score
 print("----------my SVM --------")
